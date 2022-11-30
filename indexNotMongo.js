@@ -4,7 +4,6 @@ import * as dotenv from "dotenv";
 
 //Routes - USER
 import userRoute from "./routes/user.routes.js";
-import connect from "./config/db.config.js";
 
 //habilitar o servidor a ter variáveis de ambiente
 dotenv.config();
@@ -14,8 +13,6 @@ const port = 3000;
 const app = express();
 //configurar o servidor para aceitar JSON
 app.use(express.json());
-//conectando com o sgbd
-connect()
 
 app.use("/user", userRoute);
 
